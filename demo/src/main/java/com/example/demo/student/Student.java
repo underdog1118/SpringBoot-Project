@@ -6,7 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
@@ -27,6 +29,7 @@ public class Student {
   private String name;
   private String email;
   private LocalDate dob;
+  @Transient //auto calculate
   private Integer age;
 
 
@@ -34,19 +37,17 @@ public class Student {
   public Student() {
   }
 
-  public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+  public Student(Long id, String name, String email, LocalDate dob) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.dob = dob;
-    this.age = age;
   }
 
-  public Student(String name, String email, LocalDate dob, Integer age) {
+  public Student(String name, String email, LocalDate dob) {
     this.name = name;
     this.email = email;
     this.dob = dob;
-    this.age = age;
   }
 
   /**
@@ -127,8 +128,10 @@ public class Student {
    * @return the value of age
    */
   public Integer getAge() {
-    return this.age;
+//    return this.age;
+    return Period.between(dob, LocalDate.now()).getYears();
   }
+
 
   /**
    * Sets the age.

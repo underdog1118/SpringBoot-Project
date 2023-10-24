@@ -18,15 +18,13 @@ public class StudentConfig {
       Student jona = new Student(
           "Jona",
           "jonqzp@gmail.com",
-           LocalDate.of(1999, APRIL,5),
-          24
+           LocalDate.of(1999, APRIL,5)
       );
 
       Student alex = new Student(
           "Alex",
           "alex@gmail.com",
-          LocalDate.of(2005, JANUARY,1),
-          18
+          LocalDate.of(2005, JANUARY,1)
       );
 
       // add to the database
