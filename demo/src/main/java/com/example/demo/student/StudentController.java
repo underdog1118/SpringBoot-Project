@@ -13,7 +13,7 @@ public class StudentController {
 
   private final StudentService studentService;
 
-  @Autowired //(injection)
+  @Autowired //(dependency injection)
   public StudentController(StudentService studentService) {
     this.studentService = studentService;
   }
