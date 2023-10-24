@@ -7,3 +7,7 @@ A SpringBoot Practice Project
 
 Post
 ![image-20231024120315252](images/image-20231024120315252.png)
+
+Test
+
+![image-20231024141528570](images/image-20231024141528570.png)
